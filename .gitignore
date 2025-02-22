@@ -1,0 +1,12 @@
+node_modules
+tsconfig.tsbuildinfo
+tsconfig.node.tsbuildinfo
+tsconfig.app.tsbuildinfo
+.yarn/install-state.gz
+.yarn/versions
+**/LICENSE
+.sample
+.env
+build
+dist
+lib
