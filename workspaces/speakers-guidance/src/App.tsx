@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Container } from "./components/Container";
+import { Message } from "./components/Message";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App = () => {
+  const sampleDateTime = new Date();
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Container>
+        <Message body="guardian" source="guardian" datetime={sampleDateTime} />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message body="guardian" source="guardian" />
+        <Message body="speaker" source="speaker" />
+        <Message
+          body="this is anw incrediblyt long mesasge and doesn't need to be real english it just needs to be long and i want to type it out quite quickly so i'm just gonna type it like this i don't really care how it looks in the grand scheme of things from a grammatical perspective, mores o from a guardian perspective"
+          source="speaker"
+        />
+      </Container>
     </>
-  )
-}
-
-export default App
+  );
+};
