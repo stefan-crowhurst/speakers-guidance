@@ -19,5 +19,6 @@
         "esbenp.prettier-vscode"
       ]
     }
-  }
+  },
+  "postCreateCommand": "sudo corepack enable && yarn set version 4.5.0"
 }
