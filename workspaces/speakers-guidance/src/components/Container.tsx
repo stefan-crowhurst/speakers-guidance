@@ -1,4 +1,5 @@
 import { Card, Flex, Layout, Typography } from "antd";
+import Link from "antd/es/typography/Link";
 import React, { ReactNode } from "react";
 
 type ContainerProps = {
@@ -58,7 +59,10 @@ export const Container = (props: ContainerProps) => {
             color: "darkgray",
           }}
         >
-          Copyright Stefan T. Crowhurst, 2025
+          Open source project available under the MIT license, see source{" "}
+          <Link href="https://github.com/stefan-crowhurst/speakers-guidance">
+            here
+          </Link>
         </Typography>
       </Layout.Footer>
     </Layout>
