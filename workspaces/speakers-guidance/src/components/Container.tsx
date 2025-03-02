@@ -1,6 +1,7 @@
 import { Card, Flex, Layout, Typography } from "antd";
 import Link from "antd/es/typography/Link";
 import React, { ReactNode } from "react";
+import { ConversationArea } from "./ConversationArea";
 
 type ContainerProps = {
   children: ReactNode[];
@@ -36,14 +37,15 @@ export const Container = (props: ContainerProps) => {
           style={{
             backgroundColor: "rgb(105 105 105 / 25%)",
             height: "100%",
-            overflowY: "auto",
-            scrollbarWidth: "thin",
-            scrollBehavior: "smooth",
-            scrollbarColor: "rgb(105 105 105) rgb(0 0 0 / 0%)",
-            scrollbarGutter: "stable",
+          }}
+          styles={{
+            body: {
+              height: "100%",
+              padding: 0,
+            },
           }}
         >
-          {props.children}
+          <ConversationArea>{props.children}</ConversationArea>
         </Card>
       </Layout.Content>
       <Layout.Footer
