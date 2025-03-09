@@ -19,7 +19,7 @@ export const Message = (props: MessageProps) => {
           marginLeft: "0.25rem",
           marginRight: "0.25rem",
           marginBottom: "0.1rem",
-          color: "darkgrey",
+          color: "lightgray",
         }}
       >
         {props.source[0].toUpperCase() + props.source.substring(1)} |{" "}
@@ -34,12 +34,13 @@ export const Message = (props: MessageProps) => {
           variant="borderless"
           size="small"
           style={{
-            backgroundColor: "rgb(105 105 105)",
+            backgroundColor: "rgb(85 85 85)",
             height: "100%",
             maxWidth: "75%",
+            boxShadow: "3px 3px 3px rgb(30 30 30 / 50%)",
           }}
         >
-          <Typography>{props.body}</Typography>
+          <Typography style={{ color: "white" }}>{props.body}</Typography>
         </Card>
       </Flex>
     </Flex>

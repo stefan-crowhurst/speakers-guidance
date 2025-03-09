@@ -16,7 +16,7 @@ export const ConversationArea = (props: ConversationAreaProps) => {
           overflowY: "auto",
           scrollbarWidth: "thin",
           scrollBehavior: "smooth",
-          scrollbarColor: "rgb(105 105 105) rgb(0 0 0 / 0%)",
+          scrollbarColor: "rgb(150 150 150) rgb(0 0 0 / 0%)",
           scrollbarGutter: "stable",
           padding: "2em",
         }}
