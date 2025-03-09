@@ -1,12 +1,10 @@
 import { Card, Flex, Layout, Typography } from "antd";
 import Link from "antd/es/typography/Link";
-import React, { ReactNode } from "react";
+import React, { useState } from "react";
 import { ConversationArea } from "./ConversationArea";
 import imageUrl from "../static/tower-north.webp";
-
-type ContainerProps = {
-  children: ReactNode[];
-};
+import { z } from "zod";
+import { Message } from "./Message";
 
 const LayoutTheme: React.CSSProperties = {
   width: "100%",
@@ -15,7 +13,24 @@ const LayoutTheme: React.CSSProperties = {
   background: "none",
 };
 
-export const Container = (props: ContainerProps) => {
+// TODO: Move this to a shared types package
+const MessageDataSchema = z.object({
+  id: z.string(),
+  body: z.string(),
+  dateTime: z.date(),
+  source: z
+    .string()
+    .refine(
+      (s) => s === "guardian" || s === "speaker",
+      "Invalid source provided"
+    ),
+});
+
+type MessageData = z.infer<typeof MessageDataSchema>;
+
+export const Container = () => {
+  const [messages, setMessages] = useState<MessageData[]>([]);
+
   return (
     <div
       style={{
@@ -61,7 +76,16 @@ export const Container = (props: ContainerProps) => {
               },
             }}
           >
-            <ConversationArea>{props.children}</ConversationArea>
+            <ConversationArea>
+              {messages.map((message) => (
+                <Message
+                  key={message.id}
+                  datetime={message.dateTime}
+                  source={message.source}
+                  body={message.body}
+                />
+              ))}
+            </ConversationArea>
           </Card>
         </Layout.Content>
         <Layout.Footer
