@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc --noEmit && node ./esbuild.config.mjs",
+    "start": "yarn prestart && node --env-file=.env ./dist/app.js",
+    "prestart": "yarn build"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "express": "^4.21.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/express": "^5.0.0",
+    "esbuild": "^0.25.1",
+    "esbuild-node-externals": "^1.18.0",
+    "esbuild-plugin-handlebars": "^1.0.3",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.22.0"
+  }
+}
